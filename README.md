@@ -114,3 +114,42 @@ _Update - To set n8n version you can pass a argument when deploying using contai
 ### Sources
 
 https://github.com/n8n-io/n8n
+
+
+# Local enviroment
+crear el esquema n8n en la base de datos o una base de datos dedicada a n8n
+
+
+
+docker run -it --rm \
+    --name n8n \
+    --network cforemoto_default \
+    -p 5678:5678 \
+    -e DB_TYPE=postgresdb \
+    -e DB_POSTGRESDB_DATABASE=cforemoto \
+    -e DB_POSTGRESDB_HOST=db \
+    -e DB_POSTGRESDB_PORT=5432 \
+    -e DB_POSTGRESDB_USER=userdb \
+    -e DB_POSTGRESDB_SCHEMA=n8n \
+    -e DB_POSTGRESDB_PASSWORD=password \
+    -v ~/.n8n:/home/node/.n8n \
+    -v ~/proyectos/CFOremoto-GitHub/cforemoto-n8n/workflows:/home/node \
+    n8nio/n8n:0.166.0 \
+    n8n start
+
+
+docker run -it --rm \
+    --name n8n \
+    --network cforemoto_default \
+    -p 5678:5678 \
+    -e DB_TYPE=postgresdb \
+    -e DB_POSTGRESDB_DATABASE=cforemoto \
+    -e DB_POSTGRESDB_HOST=db \
+    -e DB_POSTGRESDB_PORT=5432 \
+    -e DB_POSTGRESDB_USER=userdb \
+    -e DB_POSTGRESDB_SCHEMA=n8n \
+    -e DB_POSTGRESDB_PASSWORD=password \
+    -v ~/.n8n:/home/node/.n8n \
+    -v ~/proyectos/CFOremoto-GitHub/cforemoto-n8n/workflows:/home/node \
+    n8nio/n8n \
+    n8n start
