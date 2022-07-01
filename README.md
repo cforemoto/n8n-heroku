@@ -27,6 +27,7 @@ you can change your app's stack using heroku cli, make sure you have heroku cli 
 
 #### login into heroku account
     heroku login
+    git push heroku master
 
 #### change app stack
     heroku stack:set contaner --app APP_NAME
