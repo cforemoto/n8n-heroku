@@ -16,7 +16,7 @@ if [ "$DATABASE_URL" ]
 then 
     ARG_URL=$DATABASE_URL
 	echo $DATABASE_URL;
-	echo "postgre config detected"
+	echo "postgres config detected"
 
 elif [ "$MONGODB_URI" ]
 then 
@@ -26,6 +26,9 @@ then
 else
     echo "no config vars found"
 fi
+
+# disable diagnostics
+export N8N_DIAGNOSTICS_ENABLED=false
 
 # prefix variables to avoid conflicts and run parse url function on arg url
 PREFIX="N8N_DB_" parse_url "$ARG_URL"
