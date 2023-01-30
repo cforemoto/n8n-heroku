@@ -82,11 +82,11 @@ login into heroku account
 
 create heroku app
 
-    heroku create APP_NAME
+    heroku create cforemoto-n8n
 
 change app stack
 
-    heroku stack:set container --app APP_NAME
+    heroku stack:set container --app cforemoto-n8n
     
 set config vars(optional)
 
@@ -100,11 +100,11 @@ Login the container
 
 build and push container image to heroku
 
-    heroku container:push web --app APP_NAME
+    heroku container:push web --app cforemoto-n8n
     
 release new build
 
-    heroku container:release web --app APP_NAME
+    heroku container:release web --app cforemoto-n8n
     
 <br />
 
@@ -112,7 +112,7 @@ Maybe now you can specify which N8N version to install by Setting a Environment 
 
 _Update - To set n8n version you can pass a argument when deploying using container registry_
 
-    heroku container:push web --arg N8N_VERSION=0.60.0 --app APP_NAME
+    heroku container:push web --arg N8N_VERSION=0.212.1 --app cforemoto-n8n
 
 ### Sources
 
